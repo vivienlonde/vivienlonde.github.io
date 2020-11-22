@@ -11,7 +11,7 @@ title: Personal page - Vivien Londe
 # Description of the Site
 description: # A customizable Jekyll portfolio theme
 # URL of Image of the Site
-site-image: WhatATheme/assets/images/meta.jpg
+site-image: /assets/images/meta.jpg
 # Keywords of the Site
 site-keywords: Site, Template, Theme
 # URL for the Image of custom Favicon
