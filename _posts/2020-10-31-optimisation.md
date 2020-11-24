@@ -4,9 +4,8 @@ layout: post
 post-image: "/assets/images/optimisation.jfif"
 description: Quel est le lien entre un procédé métallurgique, un algorithme d'optimisation et la mécanique quantique? 🤔 Voici un post de blog pour déchiffrer les interactions entre des domaines plus corrélés qu'il n'y parait. 💡
 tags:
-- sample
-- post
-- test
+- optimisation
+- inspiration quantique
 ---
 
 Comment maximiser le chargement d’un camion de livraison tout en respectant des contraintes de poids et de volume ? Comment décider de l’ordre dans lequel ce camion va effectuer sa livraison ? Comment découper une grande plaque de verre en plusieurs fenêtres de taille donnée tout en minimisant la surface de verre non utilisée ? Comment déterminer l’emploi du temps d’infirmiers de garde tout en respectant les contraintes réglementaires et en maximisant le respect des souhaits formulés par les infirmiers ? Ces problèmes concernent des domaines bien différents mais peuvent tous être formulés mathématiquement de façon similaire : sous la forme de problèmes d’optimisation.

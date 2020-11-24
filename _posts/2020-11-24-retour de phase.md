@@ -4,9 +4,8 @@ layout: post
 post-image: "/assets/images/retour_de_flamme.jpg"
 description: Une explication détaillée du retour de phase, une technique centrale en algorithmique quantique.
 tags:
-- sample
-- post
-- test
+- estimation de phase
+- oracle quantique
 ---
 
 Le **retour de phase** (en anglais "phase kickback") est le point fondamental des algorithmes quantiques d'**estimation de phase**. Or l'estimation de phase est la sous-routine centrale de la simulation moléculaire quantique, de l'algorithme quantique de  *factorisation* (c'est-à-dire de l'**algorithme de Shor**) et de l'algèbre linéaire quantique. A son tour, la simulation moléculaire ouvre la porte à la découverte de *nouveaux matériaux*, de *nouvelles réactions chimiques* et de *nouveaux médicaments*. De même l'algèbre linéaire quantique est à l'origine de nombreuses applications du calcul quantique : l'*optimisation convexe* et toutes ses applications, une partie importante du *machine learning quantique* et la *résolution d'équations aux dérivées partielles*.
