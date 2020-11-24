@@ -31,7 +31,7 @@ $$ U \vert \psi \rangle = e^{i\phi} \vert \psi \rangle. $$
 
 L'état $$ \vert \psi \rangle $$ peut être constitué d'un ou de plusieurs qubits. En revanche dans cet exemple, la ligne du haut correspond à un seul qubit, qu'on va appeler le qubit de contrôle. Le qubit de contrôle peut être dans un état de superposition quelconque. En suivant la convention standard, je note ici $$ \alpha \vert 0 \rangle + \beta \vert 1 \rangle $$ cet état de superposition quelconque.
 
-Comme la matrice $$ U $$ est appliquée uniquement lorsque le qubit de contrôle est dans l'état $$ \vert 1 \rangle $$, seule cette partie de la superposition acquiert la phase $$ \phi $$. Comme la phase est une propriété de l'ensemble des qubits, on peut considérer que l'état $$ \vert \psi \rangle $$ n'acquiert jamais la phase $$ \phi $$ mais que la partie $$ \vert 1 \rangle $$ du qubit de contrôle l'acquiert.
+La matrice $$ U $$ est [contrôlée](https://fr.wikipedia.org/wiki/Porte_quantique#Les_portes_Contr%C3%B4l%C3%A9e_(cX_cY_cZ)) par le qubit de contrôle. C'est-à-dire qu'elle est appliquée uniquement lorsque le qubit de contrôle est dans l'état $$ \vert 1 \rangle $$, seule cette partie de la superposition acquiert la phase $$ \phi $$. Comme la phase est une propriété de l'ensemble des qubits, on peut considérer que l'état $$ \vert \psi \rangle $$ n'acquiert jamais la phase $$ \phi $$ mais que la partie $$ \vert 1 \rangle $$ du qubit de contrôle l'acquiert.
 
 Finalement **l'état $$ \vert \psi \rangle $$ n'est pas modifié**. Il peut donc être réutilisé. En revanche **le qubit de contrôle a enregistré de l'information sur $$ \phi $$**, c'est-à-dire sur une propriété de l'état $$ \vert \psi \rangle $$ et de la matrice $$ U $$.
 
@@ -43,9 +43,10 @@ Après un éventuel post-traitement, on peut mesurer le qubit de contrôle pour 
   <img width="460" height="300" src="/assets/images/elementary_phase_estimation.PNG">
 </p>
 
+La [porte $$ H $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Hadamard_(H)) est la porte de Hadamard et le symbole représentant une jauge signifie qu'on mesure le qubit correspondant à la ligne sur laquelle est placé ce symbole.  
 Lorsqu'on réalise ce circuit quantique, le résultat de la mesure du qubit de contrôle est $$ 0 $$ avec probabilité $$ \cos^2(\frac{\phi}{2}) $$ et $$ 1 $$ avec probabilité $$ \sin^2(\frac{\phi}{2}) $$. Chaque exécution de ce circuit quantique apporte donc un peu d'information sur $$ \phi $$.
 
-**Toutes les variantes de l'estimation de phase sont fondées sur le retour de phase**. Selon le nombre de qubits de contrôle, selon les itérées de $$ U $$ qui sont appliquées ($$ U^2 $$, $$ U^3 $$, $$ U^4 $$, …), selon le post-traitement du ou des qubits de contrôle et selon que ce ou ces qubits de contrôles soient immédiatement mesurés ou non, l'algorithme s'appellera l'[estimation quantique de phase](https://en.wikipedia.org/wiki/Quantum_phase_estimation_algorithm) standard ou l'estimation quantique de phase de Kitaev ou encore l'une des différentes variantes d'[estimation itérative de phase](https://docs.microsoft.com/en-us/quantum/user-guide/libraries/standard/characterization#iterative-phase-estimation) :
+**Toutes les variantes de l'estimation de phase sont fondées sur le retour de phase**. Selon le nombre de qubits de contrôle, selon les itérées de $$ U $$ qui sont appliquées ($$ U^2 $$, $$ U^3 $$, $$ U^4 $$, …), selon le post-traitement du ou des qubits de contrôle et selon que ce ou ces qubits de contrôles soient immédiatement mesurés ou non, l'algorithme s'appellera [estimation quantique de phase](https://en.wikipedia.org/wiki/Quantum_phase_estimation_algorithm) standard ou estimation quantique de phase de Kitaev ou encore une des différentes variantes d'[estimation itérative de phase](https://docs.microsoft.com/en-us/quantum/user-guide/libraries/standard/characterization#iterative-phase-estimation) :
 
 * l'estimation bayésienne de phase.
 * l'estimation robuste de phase.
@@ -65,7 +66,7 @@ Pour ne pas perdre d'information pendant un calcul quantique, on implémente gé
 $$ U_f ( \, \vert x \rangle \vert 0 \rangle \, ) = \vert x \rangle \vert f(x) \rangle. $$
 </p>
 
-On voit que les qubits d'inputs sont dans l'état $$ \vert x \rangle $$ avant et après l'application de l'opération quantique $$ U_f $$. En revanche le qubit d'auxiliaire passe de l'état $$ \vert 0 \rangle $$ à  l'état $$ \vert f(x) \rangle $$. C'est-à-dire ou bien $$ \vert 0 \rangle $$ ou bien $$ \vert 1 \rangle $$ selon la valeur de $$ f(x) $$.  
+On voit que les qubits d'inputs sont dans l'état $$ \vert x \rangle $$ avant et après l'application de l'opération quantique $$ U_f $$. En revanche le qubit auxiliaire passe de l'état $$ \vert 0 \rangle $$ à  l'état $$ \vert f(x) \rangle $$. C'est-à-dire ou bien $$ \vert 0 \rangle $$ ou bien $$ \vert 1 \rangle $$ selon la valeur de $$ f(x) $$.  
 Si le qubit auxiliaire était dans l'état $$ \vert 1 \rangle $$ avant l'application de $$ U_f $$, il se retrouverait dans l'état $$ \vert \text{NOT}(f(x)) \rangle $$ après l'application de $$ U_f $$. En effet on ajoute la valeur de $$ f(x) $$ à la valeur initiale du qubit auxiliaire. Comme $$ 1 + 1 = 0 $$ en binaire, on retrouve bien le résultat annoncé. Pour rappel :
 
 <p align="center">
