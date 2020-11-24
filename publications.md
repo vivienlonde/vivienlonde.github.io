@@ -25,7 +25,7 @@ layout: page
   </span>  
   A. Leverrier, V. Londe, G. Zémor (2019).
   [[ITCS]](http://itcs-conf.org/itcs21/itcs21-accepted.html),
-  [[QIP talk]](https://www.youtube.com/watch?v=VDX76AlORUM&list=PLGdMsPGuoD25wLgnY7RBoTAxsnQEMsNA0&index=56&t=1247s)
+  [[QIP talk]](https://www.youtube.com/watch?v=VDX76AlORUM&list=PLGdMsPGuoD25wLgnY7RBoTAxsnQEMsNA0&index=56&t=1247s), 
   [[arXiv]](https://arxiv.org/abs/1911.03069)
 
 <p></p>
