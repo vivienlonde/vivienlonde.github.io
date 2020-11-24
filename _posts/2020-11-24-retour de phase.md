@@ -87,6 +87,13 @@ Et si $$ f(x) = 1 $$, alors $$ \tilde{U}_f ( \, \vert x \rangle \, ) = {\color{r
 Il est souvent plus facile d'implémenter l'opération quantique $$ U_f $$ (sans $$ \tilde{} $$), qu'on appellera désormais l'**oracle à qubit auxiliaire**. En effet on peut adapter le circuit *classique* qui permet de calculer $$ f $$ pour obtenir le circuit *quantique* qui permet de calculer $$ U_f $$.  
 En revanche dans de nombreux algorithmes quantiques comme par exemple l'[algorithme de Grover](https://fr.wikipedia.org/wiki/Algorithme_de_Grover) ou l'algorithme de [Deutsch-Jozsa](https://fr.wikipedia.org/wiki/Algorithme_de_Deutsch-Jozsa), on a besoin de l'opération quantique $$ \tilde{U}_f $$ (avec $$ \tilde{} $$), qu'on appellera désormais l'**oracle à phase**. En plus l'oracle à phase est plus concis et il est plus facile de se le représenter à mon avis. Il permet de bien comprendre ce qu'est (et ce que n'est pas) le parallélisme quantique : en une seule opération quantique, chaque état quantique $$ \vert x \rangle $$ associé à chacun des $$ 2^n $$ inputs possible $$ x $$ encode son résultat $$ f(x) $$ dans sa phase.
 
+<p align="center">
+  <figure>
+    <img width="400" src="/assets/images/oracle_de_Delphes.png">
+    <figcaption>oracle de Delphes : la Pythie.</figcaption> 
+  </figure>
+</p>
+
 Heureusement la technique du **retour de phase** permet de transformer un oracle à qubit auxiliaire (plus naturel à implémenter) en un oracle à phase (plus utile en algorithmique quantique).
 
 #### D'un oracle à l'autre
@@ -124,6 +131,13 @@ La porte de Hadamard et la porte $$ X $$ remmettent finalement le qubit auxiliai
 ###### Bilan
 
 On voit que dans les deux cas, le qubit auxiliaire revient à son état de départ (c'est-à-dire $$ \vert 0 \rangle $$) et l'état des qubits d'input passe de $$ \vert x \rangle $$ à $$ ({\color{red} -} 1)^{f(x)} \vert x \rangle $$. On a donc réussi à construire un **oracle à phase** à partir d'un **oracle à qubit auxiliaire**.
+
+<p align="center">
+  <figure>
+    <img width="400" src="/assets/images/oracle_de_Matrix.jpg">
+    <figcaption>Il semble plus facile d'obtenir un oracle à phase à partir d'un oracle à qubit auxiliaire que d'obtenir l'oracle de Matrix à partir de l'oracle de Delphes.</figcaption> 
+  </figure>
+</p>
 
 #### Explication en termes de **retour de phase**
 
