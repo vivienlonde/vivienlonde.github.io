@@ -1,7 +1,7 @@
 ---
 title: "Calcul quantique : la technique du retour de phase"
 layout: post
-post-image: "/assets/images/retour_de_flamme.jpg"
+post-image: "/assets/images/retour_de_phase/retour_de_flamme.jpg"
 description: Une explication détaillée du retour de phase, une technique centrale en algorithmique quantique.
 tags:
 - estimation de phase
@@ -19,7 +19,7 @@ On peut donc sans éxagérer dire que la quasi-totalité des algorithmes quantiq
 Le retour de phase correspond au circuit suivant:
 
 <p align="center">
-  <img width="460" height="300" src="/assets/images/phase_kickback.PNG">
+  <img width="460" height="300" src="/assets/images/retour_de_phase/phase_kickback.PNG">
 </p>
 
 On suppose ici que l'état $$ \vert \psi \rangle $$ est un état propre de la porte $$ U $$. C'est à dire que lorsqu'on applique $$ U $$ à l'état $$ \vert \psi \rangle $$, il acquiert une phase $$ \phi $$:
@@ -39,7 +39,7 @@ Ce point de vue est très contre-intuitif car on pourrait dire naïvement que l'
 Après un éventuel post-traitement, on peut mesurer le qubit de contrôle pour obtenir de l'information sur $$ \phi $$. Un circuit très simple qui permet de récupérer de l'information sur $$ \phi $$ est le suivant:
 
 <p align="center">
-  <img width="460" height="300" src="/assets/images/elementary_phase_estimation.PNG">
+  <img width="460" height="300" src="/assets/images/retour_de_phase/elementary_phase_estimation.PNG">
 </p>
 
 La [porte $$ H $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Hadamard_(H)) est la porte de Hadamard et le symbole représentant une jauge signifie qu'on mesure le qubit correspondant à la ligne sur laquelle est placé ce symbole.  
@@ -89,7 +89,7 @@ En revanche dans de nombreux algorithmes quantiques comme par exemple l'[algorit
 
 <p align="center">
   <figure>
-    <img width="400" src="/assets/images/oracle_de_Delphes.png">
+    <img width="400" src="/assets/images/retour_de_phase/oracle_de_Delphes.png">
     <figcaption>oracle de Delphes : la Pythie.</figcaption> 
   </figure>
 </p>
@@ -134,7 +134,7 @@ On voit que dans les deux cas, le qubit auxiliaire revient à son état de dépa
 
 <p align="center">
   <figure>
-    <img width="400" src="/assets/images/oracle_de_Matrix.jpg">
+    <img width="400" src="/assets/images/retour_de_phase/oracle_de_Matrix.jpg">
     <figcaption>Il semble plus facile d'obtenir un oracle à phase à partir d'un oracle à qubit auxiliaire que d'obtenir l'oracle de Matrix à partir de l'oracle de Delphes.</figcaption> 
   </figure>
 </p>

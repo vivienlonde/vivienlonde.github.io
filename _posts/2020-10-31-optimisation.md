@@ -1,7 +1,7 @@
 ---
 title: "Optimisation et quantique"
 layout: post
-post-image: "/assets/images/optimisation.jfif"
+post-image: "/assets/images/optimisation/optimisation.jfif"
 description: Quel est le lien entre un procédé métallurgique, un algorithme d'optimisation et la mécanique quantique? 🤔 Voici un post de blog pour déchiffrer les interactions entre des domaines plus corrélés qu'il n'y parait. 💡
 tags:
 - optimisation
