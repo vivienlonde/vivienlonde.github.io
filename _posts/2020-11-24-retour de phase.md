@@ -135,7 +135,7 @@ On voit que dans les deux cas, le qubit auxiliaire revient à son état de dépa
 <p align="center">
   <figure>
     <img width="400" src="/assets/images/retour_de_phase/oracle_de_Matrix.jpg">
-    <figcaption>Il semble plus facile d'obtenir un oracle à phase à partir d'un oracle à qubit auxiliaire que d'obtenir l'oracle de Matrix à partir de l'oracle de Delphes.</figcaption> 
+    <figcaption>Il semble plus facile d'obtenir un oracle à phase à partir d'un oracle à qubit auxiliaire que d'obtenir l'oracle de Matrix à partir de l'oracle de Delphes.</figcaption>
   </figure>
 </p>
 
