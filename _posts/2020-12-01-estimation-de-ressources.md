@@ -38,7 +38,7 @@ Appliquer une opération quantique (ici les portes $$ X $$ et $$ H $$) avant et 
   </figure>
 </p>
 
-Le compilateur Q# comprend ici que le bloc "within" (c'est-à-dire les portes $$ X $$ et $$ H $$) doit être appliqué une fois avant le bloc "apply" (c'est-à-dire la porte $$ CCNOT $$) et une deuxième fois dans l'autre sens après le bloc "apply". La syntaxe ["within - apply"](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/control-flow?view=qsharp-preview#conjugations) rend un programme plus lisible car elle correspond à la façon dont un programmeur quantique conçoit son programme (en tout cas en ce qui me concerne).
+Le compilateur Q# comprend ici que le bloc "within" (c'est-à-dire les portes $$ X $$ et $$ H $$) doit être appliqué une fois avant le bloc "apply" (c'est-à-dire la porte $$ CCNOT $$) et une deuxième fois dans l'autre sens après le bloc "apply". La syntaxe ["within - apply"](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/control-flow?view=qsharp-preview#conjugations) rend un programme plus lisible car elle correspond à la façon dont un programmeur quantique pense à son programme (en tout cas en ce qui me concerne).
 
 Si maintenant `qubitRegister` est constitué de 3 qubits au lieu de 2, on aimerait écrire le même programme en remplaçant la porte $$ CCNOT $$ par une porte $$ CCCNOT $$ qui change la valeur du qubit auxiliaire si et seulement si les 3 qubits de `qubitRegister` sont dans l'état $$ \vert 1 \rangle $$. Sauf que la porte $$ CCCNOT $$ n'existe pas en Q# 😄. On peut s'en sortir en utilisant un qubit auxiliaire supplémentaire :
 
@@ -49,7 +49,7 @@ Si maintenant `qubitRegister` est constitué de 3 qubits au lieu de 2, on aimera
   </figure>
 </p>
 
-Heureusement on peut également utiliser le [foncteur `Controlled`](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/operations-functions?view=qsharp-preview#controlled-and-adjoint-operations) qui permet de contrôler une opération quantique sur un nombre arbitraire de qubits. Ainsi `Controlled X (qubitRegister, kickBackAuxQubit)` est l'équivalent de ce que serait `C...CNOT (qubitRegister[0], ..., qubitRegister[n-1], kickBackAuxQubit)` si la porte $$ C...CNOT $$ avec n $$ C $$ existait! Voici l'oracle `AllOnesOracle` implémenté pour un nombre arbitraire de qubits :
+Quelque soit le nombre de qubits contenus par `qubitRegister`, on peut s'en sortir ainsi : il suffit d'utiliser un qubit auxiliaire supplémentaire pour chaque qubit supplémentaire de `qubitRegister`. Toutefois devoir gérer manuellement la déclaration des qubits auxiliaires peut être fastidieux pour le programmeur Q#. Heureusement on peut également utiliser le [foncteur `Controlled`](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/operations-functions?view=qsharp-preview#controlled-and-adjoint-operations) qui permet de contrôler une opération quantique sur un nombre arbitraire de qubits. Ainsi `Controlled X (qubitRegister, kickBackAuxQubit)` est l'équivalent de ce que serait `C...CNOT (qubitRegister[0], ..., qubitRegister[n-1], kickBackAuxQubit)` si la porte $$ C...CNOT $$ avec n $$ C $$ existait! Voici l'oracle `AllOnesOracle` implémenté pour un nombre arbitraire de qubits :
 
 <p align="center">
   <figure>
