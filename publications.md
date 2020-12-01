@@ -7,6 +7,7 @@ layout: page
   Single-Shot Decoding of Linear Rate LDPC Quantum Codes with High Performance.
   </span>  
   N. Breuckmann, V. Londe (2020).
+  [[N. Breuckmann's slides]](https://docs.google.com/presentation/d/1B6YJ-SOkxD-IBATtVcAGd1eQV6D-IzXUPor_bCzMvk0/edit#slide=id.g5eefed8e53_0_18), 
   [[introduction by N. Breuckmann]](https://www.youtube.com/watch?v=7DTk7Wu0qGI&feature=emb_logo), 
   [[arXiv]](https://arxiv.org/abs/2001.03568)
 
