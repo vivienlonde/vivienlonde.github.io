@@ -54,7 +54,7 @@ Sur la courbe suivante, j'ai tracé pour $$ \alpha = 2 $$ la vraie solution ($$ 
 
 ## Cas d'un Hamiltonien quelconque
 
-Revenons maintenant au système quantique $$ \vert \psi \rangle $$ dont l'évolution est régie par l'équation de Schrödinger. En simulation Hamiltonienne, on connaît le Hamiltonien $$ \hat{H} $$ qui apparait dans l'équation de Schrödinger. La solution exacte est formellement la même que dans le cas de la fonction $$ f $$ :
+Revenons maintenant au système quantique $$ \vert \psi \rangle $$ dont l'évolution est régie par l'équation de Schrödinger. En simulation Hamiltonienne, on connaît l'Hamiltonien $$ \hat{H} $$ qui apparait dans l'équation de Schrödinger. La solution exacte est formellement la même que dans le cas de la fonction $$ f $$ :
 
 $$ \vert \psi (t) \rangle = e^{\frac{\hat{H}}{i\hbar} t} \, \, \vert \psi (0) \rangle $$
 
