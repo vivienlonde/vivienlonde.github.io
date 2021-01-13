@@ -76,7 +76,7 @@ Pour pouvoir décrire l'algorithme d'amplification d'amplitude de Grover, il ne 
   </figure>
 </p>
 
-On peut remarquer que cette opération est construite à partir de $$ U_{\vert 1 .. 1 \rangle} $$, la réflexion par rapport à l'état "tout 1" : $$ \vert 1 .. 1 \rangle $$. Plus précisément, on conjugue $$ U_{\vert 1 .. 1 \rangle} $$ par une opération qui transforme l'état $$ \vert s \rangle $$ en l'état $$ \vert 1 .. 1 \rangle $$. Appliquer une porte $$ H $$ à chaque qubit puis une porte $$ X $$ à chaque qubit fournit cette opération. Ce [billet de blog](https://vivienlonde.github.io/blog/estimation-de-ressources) explique la technique de conjugaison, très courante en algorithmique quantique, et donne différentes façons d'implémenter $$ U_{\vert 1 .. 1 \rangle} $$.
+On peut remarquer que cette opération est construite à partir de $$ U_{\vert 1 .. 1 \rangle} $$, la réflexion par rapport à l'état "tout 1" : $$ \vert 1 .. 1 \rangle $$. Plus précisément, on conjugue $$ U_{\vert 1 .. 1 \rangle} $$ par une opération qui transforme l'état de superposition uniforme $$ \vert s \rangle $$ en l'état $$ \vert 1 .. 1 \rangle $$. Appliquer une porte $$ H $$ à chaque qubit puis une porte $$ X $$ à chaque qubit fournit cette opération. Ce [billet de blog](https://vivienlonde.github.io/blog/estimation-de-ressources) explique la technique de conjugaison, très courante en algorithmique quantique, et donne différentes façons d'implémenter $$ U_{\vert 1 .. 1 \rangle} $$.
 
 Je peux maintenant décrire entièrement l'algorithme d'amplification d'amplitude de Grover. Il consiste à :
 1. Préparer l'état quantique de superposition uniforme.
