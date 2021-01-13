@@ -3,6 +3,14 @@ title: Vidéos
 layout: page
 ---
 
+* [[Question Dev] Comment programme-t-on un ordinateur quantique ?](https://www.youtube.com/watch?v=_9ALuc5hoMY)
+
+<p></p>
+
+* [[La Tech au Carré] Qubit versus bit aléatoire.](https://www.youtube.com/watch?v=MV3G9mu9xQA&feature=emb_logo)
+
+<p></p>
+
 * [[La Tech au Carré] Qu'est ce qu'un ordinateur quantique?](https://www.youtube.com/watch?v=kletYD2UFTs&t=1s)
 
 <p></p>
