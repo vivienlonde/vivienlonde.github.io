@@ -88,7 +88,7 @@ Je peux maintenant décrire entièrement l'algorithme d'amplification d'amplitud
 En termes d'opérations quantiques, cela revient à :
 1. Appliquer une porte $$ H $$ à chacun des $$ n $$ qubits d'input.
 2. Appliquer de l'ordre de $$ \sqrt{2^n} $$ fois la suite d'opérations suivante:
-    - appliquer $$ H $$ $$ \tilde{U}_f $$.
+    - appliquer $$ \tilde{U}_f $$.
     - appliquer une porte $$ H $$ puis une porte $$ X $$ à chaque qubit. Appliquer une réflexion par rapport à l'état "tout 1". Appliquer une porte $$ X $$ puis une porte $$ H $$ à chaque qubit.
 3. Mesurer tous les qubits.
 
