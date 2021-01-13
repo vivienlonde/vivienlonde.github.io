@@ -76,7 +76,7 @@ Pour pouvoir décrire l'algorithme d'amplification d'amplitude de Grover, il ne 
   </figure>
 </p>
 
-On peut remarquer que cette opération est construite à partir de $$ U_{\vert 1 .. 1 \rangle} $$, la réflexion par rapport à l'état "tout 1" : $$ \vert 1 .. 1 \rangle $$. Plus précisément, on conjugue $$ U_{\vert 1 .. 1 \rangle} $$ par une opération qui transforme l'état de superposition uniforme $$ \vert s \rangle $$ en l'état $$ \vert 1 .. 1 \rangle $$. Appliquer une porte $$ H $$ à chaque qubit puis une porte $$ X $$ à chaque qubit fournit cette opération. Ce [billet de blog](https://vivienlonde.github.io/blog/estimation-de-ressources) explique la technique de conjugaison, très courante en algorithmique quantique, et donne différentes façons d'implémenter $$ U_{\vert 1 .. 1 \rangle} $$.
+On peut remarquer que cette opération est construite à partir de $$ U_{\vert 1 .. 1 \rangle} $$, la réflexion par rapport à l'état "tout 1" : $$ \vert 1 .. 1 \rangle $$. Plus précisément, on conjugue $$ U_{\vert 1 .. 1 \rangle} $$ par une opération qui transforme l'état de superposition uniforme $$ \vert s \rangle $$ en l'état $$ \vert 1 .. 1 \rangle $$. Appliquer une porte [$$ H $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Hadamard_(H)) à chaque qubit puis une porte [$$ X $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Pauli-X_(=_porte_NOT)) à chaque qubit fournit cette opération. Ce [billet de blog](https://vivienlonde.github.io/blog/estimation-de-ressources) explique la technique de conjugaison, très courante en algorithmique quantique, et donne différentes façons d'implémenter $$ U_{\vert 1 .. 1 \rangle} $$.
 
 Je peux maintenant décrire entièrement l'algorithme d'amplification d'amplitude de Grover. Il consiste à :
 1. Préparer l'état quantique de superposition uniforme.
@@ -86,10 +86,10 @@ Je peux maintenant décrire entièrement l'algorithme d'amplification d'amplitud
 3. Mesurer tous les qubits.
 
 En termes d'opérations quantiques, cela revient à :
-1. Appliquer une porte [$$ H $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Hadamard_(H)) à chacun des $$ n $$ qubits d'input.
+1. Appliquer une porte $$ H $$ à chacun des $$ n $$ qubits d'input.
 2. Appliquer de l'ordre de $$ \sqrt{2^n} $$ fois la suite d'opérations suivante:
-    - appliquer $$ \tilde{U}_f $$.
-    - appliquer une porte $$ H $$ puis une porte [$$ X $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Pauli-X_(=_porte_NOT)) à chaque qubit. Appliquer une réflexion par rapport à l'état "tout 1". Appliquer une porte $$ X $$ puis une porte $$ H $$ à chaque qubit.
+    - appliquer $$ H $$ $$ \tilde{U}_f $$.
+    - appliquer une porte $$ H $$ puis une porte $$ X $$ à chaque qubit. Appliquer une réflexion par rapport à l'état "tout 1". Appliquer une porte $$ X $$ puis une porte $$ H $$ à chaque qubit.
 3. Mesurer tous les qubits.
 
 Avec grande probabilité, on obtient comme résultat de mesure les $$ n $$ bits correspondants à l'état marqué. Le nombre d'appels fait à $$ U_f $$ est égal à seulement environ la racine carré du nombre d'appels qu'on aurait fait à $$ f $$ si on avait voulu trouver l'état marqué avec un ordinateur classique.
