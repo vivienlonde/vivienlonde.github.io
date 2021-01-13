@@ -86,10 +86,10 @@ Je peux maintenant décrire entièrement l'algorithme d'amplification d'amplitud
 3. Mesurer tous les qubits.
 
 En termes d'opérations quantiques, cela revient à :
-1. Appliquer une porte $$ H $$ à chacun des $$ n $$ qubits d'input.
+1. Appliquer une porte [$$ H $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Hadamard_(H)) à chacun des $$ n $$ qubits d'input.
 2. Appliquer de l'ordre de $$ \sqrt{2^n} $$ fois la suite d'opérations suivante:
     - appliquer $$ \tilde{U}_f $$.
-    - appliquer une porte $$ H $$ puis une porte $$ X $$ à chaque qubit. Appliquer une réflexion par rapport à l'état "tout 1". Appliquer une porte $$ X $$ puis une porte $$ H $$ à chaque qubit.
+    - appliquer une porte $$ H $$ puis une porte [$$ X $$](https://fr.wikipedia.org/wiki/Porte_quantique#Porte_Pauli-X_(=_porte_NOT)) à chaque qubit. Appliquer une réflexion par rapport à l'état "tout 1". Appliquer une porte $$ X $$ puis une porte $$ H $$ à chaque qubit.
 3. Mesurer tous les qubits.
 
 Avec grande probabilité, on obtient comme résultat de mesure les $$ n $$ bits correspondants à l'état marqué. Le nombre d'appels fait à $$ U_f $$ est égal à seulement environ la racine carré du nombre d'appels qu'on aurait fait à $$ f $$ si on avait voulu trouver l'état marqué avec un ordinateur classique.
@@ -100,4 +100,4 @@ L'algorithme d'amplification d'amplitude de Grover fournit une **accélération 
 
 La plupart des problèmes de recherche qu'on rencontre en pratique ont une structure : savoir qu'un élément n'est pas marqué peut impliquer qu'un autre élément n'est pas marqué non plus. Néanmoins il est courant qu'une sous-routine (une partie) d'un algorithme classique consiste à effectuer une recherche exhaustive pour trouver un élément marqué sans tenir compte de la structure du problème. Dans ces cas, il est possible de donner un algorithme quantique en **"groverisant" l'algorithme classique** : on garde la structure générale de l'algorithme classique mais on remplace les sous-routines de recherche exhaustive par l'amplification d'amplitude de Grover. Trouver un tel algorithme quantique demande de bien connaitre les différents algorithmes classiques permettant de résoudre un problème afin de réussir à appliquer l'amplification d'amplitude de Grover au bon endroit !
 
-La découverte de nouveaux algorithmes quantiques par groverisation d'un algorithme classique est une approche très fructueuse. Néanmoins elle ne fournit jamais des accélérations quantiques meilleures que quadratiques puisque l'accélération quantique de l'amplification d'amplitude est elle-même quadratique.
+La découverte de nouveaux algorithmes quantiques par groverisation d'un algorithme classique est une approche très fructueuse. Néanmoins elle ne fournit jamais des accélérations quantiques meilleures que quadratiques puisque l'accélération quantique de l'amplification d'amplitude est elle-même quadratique. 
