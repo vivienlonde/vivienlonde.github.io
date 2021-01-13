@@ -2,7 +2,7 @@
 title: "Amplification d'amplitude"
 layout: post
 post-image: "/assets/images/amplification_d_amplitude/ampli.jpg"
-description: ""
+description: "L'amplification d'amplitude (ou algorithme quantique de Grover) fournit une accélération quantique quadratique pour le problème de recherche non structurée. En pratique quels problèmes bénéficient de l'accélération de Grover? Intuitivement pourquoi l'algorithme quantique possède-t-il un avantage quadratique?"
 tags:
 - algorithme quantique
 - amplification d'amplitude
