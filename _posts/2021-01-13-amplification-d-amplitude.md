@@ -37,7 +37,7 @@ En fait on ne rencontre pas le problème de recherche non structurée si souvent
 </p>
 
 Généralement une recherche non structurée ne se fait pas sur un ensemble concret d'objets (comme des clés) qu'on peut lister mais sur un espace abstrait de paramètres. Par exemple on veut fixer l'emploi du temps du personnel d'un hôpital. A chaque heure, chaque soignant peut travailler ou non. Pour une journée (24 heures) et 100 soignants il y a donc $$ 2^{2400} $$ possibilités (c'est-à-dire beaucoup : un 1 suivi de 720 zéros environ). Dans cet exemple, la fonction $$ f $$ renvoie $$ 1 $$ si un emploi du temps satisfait toutes les contraintes (réglementaires et préférences personnelles disons) et elle renvoie $$ 0 $$ sinon.  
-Toutefois ce problème de recherche du bon emploi du temps est également structuré puisque on peut éliminer de nombreux emplois du temps en testant une seule condition. Par exemple savoir qu'un certain soignant ne peut pas travailler à 22h le mardi élimine tous les emplois du temps correspondants. En revanche savoir qu'une clé n'est pas la bonne ne nous donnait aucune information sur les autres clés.
+Toutefois ce problème de recherche du bon emploi du temps est également structuré puisqu'on peut éliminer de nombreux emplois du temps en testant une seule condition. Par exemple savoir qu'un certain soignant ne peut pas travailler à 22h le mardi élimine tous les emplois du temps correspondants. En revanche savoir qu'une clé n'est pas la bonne ne nous donnait aucune information sur les autres clés.
 
 <p align="center">
   <figure>
