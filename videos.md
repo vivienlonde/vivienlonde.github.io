@@ -3,6 +3,11 @@ title: Vidéos
 layout: page
 ---
 
+* [[La Tech au Carré] L'algorithme quantique de Grover (i.e. d'amplification d'amplitude).](https://www.youtube.com/watch?v=3PB3-3RKLH4&feature=emb_logo)
+
+<p></p>
+
+
 * [[Question Dev] Comment programme-t-on un ordinateur quantique ?](https://www.youtube.com/watch?v=_9ALuc5hoMY)
 
 <p></p>
