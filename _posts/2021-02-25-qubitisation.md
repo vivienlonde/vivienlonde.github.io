@@ -26,7 +26,7 @@ Conceptuellement, la qubitisation repose sur une décomposition de l'espace de d
   <img width="600" src="/assets/images/qubitisation/schema_qubitisation.PNG">
 </p>
 
-On peut donc penser à $$\tilde U$$, l'opération quantique obtenue en qubitisant $$U$$, comme à la somme directe de $$2^n$$ matrices unitaires de dimension indexées par les valeurs propres de $$A$$:
+On peut donc penser à $$\tilde U$$, l'opération quantique obtenue en qubitisant $$U$$, comme à la somme directe de $$2^n$$ matrices unitaires de dimension $$2$$. On a une unitaire de dimension $$2$$ par valeur propre de $$A$$:
 
 $$ \tilde U = \oplus_{\lambda \in Sp(A)} W_{qubit, \lambda} $$
 
@@ -36,25 +36,31 @@ $$W_{qubit, \lambda}$$ est une matrice de taille $$2 \times 2$$. En tant que mat
   <img width="400" src="/assets/images/qubitisation/W_qubit_lambda.PNG">
 </p>
 
-La qubitisation permet ainsi de réaliser un tour de force ! Chaque valeur propre est isolée dans un espace de dimension 2 à l'intérieur duquel on va pouvoir la processer sans que ce signal ne vienne se mélanger au signal des autres valeurs propres. On peut dorénavant appliquer un même traitement à toutes les valeurs propres en parallèle puisque le signal correspondant à chaque valeur propre va rester à l'intérieur de l'espace de dimension 2 qui lui est réservé.  
+La qubitisation permet ainsi de réaliser un tour de force ! Chaque valeur propre est isolée dans un espace de dimension 2 à l'intérieur duquel on va pouvoir la processer sans que ce signal ne vienne se mélanger aux signaux des autres valeurs propres. On peut dorénavant appliquer un même traitement à toutes les valeurs propres en parallèle puisque le signal correspondant à chaque valeur propre va rester à l'intérieur de l'espace de dimension 2 qui lui est réservé.  
 
 De façon cruciale, on peut appliquer de façon séquentielle l'encodage par bloc de la matrice $$A$$. Si on s'y prend bien, chaque espace qubitisé évolue individuellement sans interférer avec les autres espaces qubitisés. Si on n'applique pas d'autres portes quantiques que le strict nécessaire, l'application de $$k$$ encodages par bloc de la matrice $$A$$ fournit l'encodage par bloc d'une matrice $$A_{(k)}$$ entièrement caractérisé par $$A$$ :
 
 1. $$A_{(k)}$$ a les mêmes espaces propres que $$A$$.
-2. Pour chaque espace propre, la valeur propre de $$A_{(k)}$$ est obtenue à partir de celle de $$A$$ en appliquant le $$k^{ième}$$ polynôme de Tchebychev : $$\lambda_{(k)} = \cos(k \arccos(\lambda))$$ .
+2. Pour chaque espace propre, la valeur propre de $$A_{(k)}$$ est obtenue à partir de celle de $$A$$ en appliquant le $$k^{ième}$$ polynôme de Tchebychev : $$\lambda_{(k)} = \cos(k \arccos(\lambda))$$.
 
 &nbsp;
 
+On comprend facilement que les valeurs propres de $$A_{(k)}$$ soient obtenues à partir de celles de $$A$$ en appliquant le $$k^{ième}$$ polynôme de Tchebychev en regardant la puissance $$k^{ième}$$ de $$W_{qubit, \lambda}$$ :
+
+<p align="center">
+  <img width="400" src="/assets/images/qubitisation/W_k_qubit_lambda.PNG">
+</p>
+
 On peut aller encore plus loin que la qubitisation en utilisant les techniques de traitement quantique du signal. Il se trouve d'ailleurs que ces deux avancées majeures en algorithmique quantique ont été introduites dans le même article : [Hamiltonian Simulation by Qubitization](https://arxiv.org/pdf/1610.06546.pdf). Le traitement quantique du signal est fondé sur la théorie de l'approximation de fonctions par des polynômes de Tchebychev. Etant donné une fonction $$f$$, Il est donc possible d'approximer l'encodage par bloc d'une matrice $$A_f$$ qui garde la structure d'espaces propres de $$A$$ mais modifie son spectre selon la fonction $$f$$ :
 
-1. $$A_{f}$$ a les mêmes espaces propres que $$A$$
-2. Pour chaque espace propre, la valeur propre de $$A_{f}$$ est obtenue à partir de celle de $$A$$ en appliquant la fonction $$f$$ : $$\lambda_{f} = f(\lambda)$$
+1. $$A_{f}$$ a les mêmes espaces propres que $$A$$.
+2. Pour chaque espace propre, la valeur propre de $$A_{f}$$ est obtenue à partir de celle de $$A$$ en appliquant la fonction $$f$$ : $$\lambda_{f} = f(\lambda)$$.
 
 &nbsp;
 
 ## Application à la simulation Hamiltonienne
 
-La simulation Hamiltonienne est la motivation des auteurs de l'article sur la qubitisation. Etant donné un description d'un Hamiltonien $$H$$, Le but de la simulation Hamiltonienne est d'approximer l'évolution $$U(t)$$ donnée par l'équation de Schrödinger :
+La simulation Hamiltonienne est la motivation des auteurs de l'article sur la qubitisation. Etant donné une description d'un Hamiltonien $$H$$, Le but de la simulation Hamiltonienne est d'approximer l'évolution $$U(t)$$ donnée par l'équation de Schrödinger :
 
 $$ U_{Schroedinger}(t) = e^{-i \frac{H t}{\bar{h}}} $$
 
@@ -80,7 +86,7 @@ Pour une liste plus exhaustive je vous conseille la lecture de l'article ci-dess
 
 La qubitisation permet de transformer un opérateur $$A$$ dont le spectre est inclus dans $$[-1, 1]$$ en un opérateur unitaire $$U$$ ayant une structure d'espaces propres similaire et une valeur propre $$ \theta = \arccos(\lambda) $$ pour chaque valeur propre $$ \lambda $$ de $$A$$. Il est courant de commencer par normaliser $$A$$ de façon à ce que son spectre soit inclus dans $$[-1, 1]$$ avant de le qubitiser. Il est ensuite possible d'appliquer une même fonction à chaque valeur propre. Pour implémenter l'inverse d'une matrice par exemple, on peut appliquer la fonction $$ x \mapsto \frac{1}{x} $$ à chaque valeur propre $$\lambda$$. 
 
-Cette transformation est particulièrement intéressante lorsque $$\vert \lambda \vert$$ est proche de $$1$$. En effet, pour $$\theta$$ proche de $$0$$,
+Le fait d'appliquer la fonction $$ \arccos $$ aux valeurs propres est particulièrement intéressant lorsqu'une valeur propre $$\vert \lambda \vert$$ est proche de $$1$$. En effet, pour $$\theta$$ proche de $$0$$,
 
 $$\cos(\theta) \approx 1 - \frac{\theta^2}{2}.$$
 
