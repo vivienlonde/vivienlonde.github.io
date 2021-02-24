@@ -27,9 +27,12 @@
                 <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#contact">CONTACT</a>
                 <a class="navbar-item {% if page.layout == 'blog' %}is-active{% endif %}"
                     href="{{site.url}}{{site.baseurl}}/blog">BLOG</a>
-                {% include dropdown.html %}
-            </div>
+                <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/publications">PUBLICATIONS</a>
+                <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/videos">VIDEOS</a>
+                <!-- include dropdown.html à faire précéder d'une accolade et d'un signe pourcent et suivre d'un signe pourcent et d'une accolade pour avoir un menu déroulant More -->
 
+            </div>
+            
         </div>
     </div>
 </nav>

@@ -28,15 +28,21 @@
             <!--Link Section-->
             <div class="column has-text-white">
                 <h3>More Links</h3>
-                {% for sitepage in site.html_pages %}
+                <!-- {% for sitepage in site.html_pages %}
                 {% unless sitepage.url == '/' or sitepage.url == '/404' or sitepage.url == '/blog' or sitepage.url == '/project' %}
                 <li>
                     <a href="{{sitepage.url | absolute_url}}">{{sitepage.title}}</a>
                 </li>
                 {% endunless %}
-                {% endfor %}
+                {% endfor %} -->
                 <li>
-                    <a target="_blank" href="{{site.url}}{{site.baseurl}}/feed.xml">Subscribe via RSS</a>
+                    <a href="{{site.url}}{{site.baseurl}}/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="{{site.url}}{{site.baseurl}}/videos">Vidéos</a>
+                </li>
+                <li>
+                    <a target="_blank" href="{{site.url}}{{site.baseurl}}/feed.xml">S'abonner au flux RSS</a>
                 </li>
             </div>
 
