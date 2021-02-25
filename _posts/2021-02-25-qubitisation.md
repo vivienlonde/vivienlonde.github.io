@@ -45,7 +45,7 @@ De façon cruciale, on peut appliquer de façon séquentielle l'encodage par blo
 
 &nbsp;
 
-On comprend facilement que les valeurs propres de $$A_{(k)}$$ soient obtenues à partir de celles de $$A$$ en appliquant le $$k^{ième}$$ polynôme de Tchebychev en regardant la puissance $$k^{ième}$$ de $$W_{qubit, \lambda}$$ :
+On comprend facilement que les valeurs propres de $$A_{(k)}$$ soient celles de $$A$$ auxquelles on a appliqué le $$k^{ième}$$ polynôme de Tchebychev en regardant la puissance $$k^{ième}$$ de $$W_{qubit, \lambda}$$ :
 
 <p align="center">
   <img width="400" src="/assets/images/qubitisation/W_k_qubit_lambda.PNG">
@@ -68,7 +68,7 @@ Il se trouve que par qubitisation, il est plus facile d'implémenter l'opératio
 
 $$ U_{qubitisation}(t) = e^{-i \frac{\arccos(\frac{H}{\alpha}) t}{\bar{h}}} $$
 
-où $$\alpha$$ est une constante de normalisationtelle que toutes les valeurs propres de $$\frac{H}{\alpha}$$ soit comprise entre $$-1$$ et $$1$$. Il est courant que le but de la simulation Hamiltonienne soit de calculer différents niveaux d'énergie associés à un Hamiltonien. Dans ce cas il est suffisant d'implémenter $$U_{qubitisation}$$. En effet après avoir estimé une valeur propre de $$U_{qubitisation}$$, on en déduit la valeur de l'énergie correspondante en prenant simplement le cosinus de la bonne quantité. Si jamais on a absolument besoin d'implémenter l'opération quantique $$U_{Schroedinger}$$, c'est également possible pour un faible surcoût grâce aux techniques du traitement quantique du signal.
+où $$\alpha$$ est une constante de normalisation telle que toutes les valeurs propres de $$\frac{H}{\alpha}$$ soit comprise entre $$-1$$ et $$1$$. Il est courant que le but de la simulation Hamiltonienne soit de calculer différents niveaux d'énergie associés à un Hamiltonien. Dans ce cas il est suffisant d'implémenter $$U_{qubitisation}$$. En effet, après avoir estimé une valeur propre de $$U_{qubitisation}$$, on en déduit la valeur de l'énergie correspondante en prenant simplement le cosinus de la bonne quantité. Si jamais on a absolument besoin d'implémenter l'opération quantique $$U_{Schroedinger}$$, c'est également possible pour un faible surcoût grâce aux techniques du traitement quantique du signal.
 
 ## Application à d'autres domaines en algorithmique quantique
 
@@ -86,7 +86,7 @@ Pour une liste plus exhaustive je vous conseille la lecture de l'article ci-dess
 
 La qubitisation permet de transformer un opérateur $$A$$ dont le spectre est inclus dans $$[-1, 1]$$ en un opérateur unitaire $$U$$ ayant une structure d'espaces propres similaire et une valeur propre $$ \theta = \arccos(\lambda) $$ pour chaque valeur propre $$ \lambda $$ de $$A$$. Il est courant de commencer par normaliser $$A$$ de façon à ce que son spectre soit inclus dans $$[-1, 1]$$ avant de le qubitiser. Il est ensuite possible d'appliquer une même fonction à chaque valeur propre. Pour implémenter l'inverse d'une matrice par exemple, on peut appliquer la fonction $$ x \mapsto \frac{1}{x} $$ à chaque valeur propre $$\lambda$$. 
 
-Le fait d'appliquer la fonction $$ \arccos $$ aux valeurs propres est particulièrement intéressant lorsqu'une valeur propre $$\vert \lambda \vert$$ est proche de $$1$$. En effet, pour $$\theta$$ proche de $$0$$,
+Le fait d'appliquer la fonction $$ \arccos $$ aux valeurs propres est particulièrement intéressant lorsqu'une valeur propre a sa valeur absolue $$\vert \lambda \vert$$ proche de $$1$$. En effet, pour $$\theta$$ proche de $$0$$,
 
 $$\cos(\theta) \approx 1 - \frac{\theta^2}{2}.$$
 
@@ -96,4 +96,4 @@ $$\arccos(\lambda) \approx \sqrt{2} \sqrt{1 - \lambda}.$$
 
 La transformation par la fonction $$\arccos$$ donne ainsi un nouvel éclairage sur les accélérations quadratiques des algorithmes d'amplification d'amplitude et de certaines marches quantiques. En effet dans le cas des marches quantiques par exemple, le facteur $$\sqrt{1 - \lambda}$$ montre que le trou spectral augmente de façon quadratique lorsqu'on applique la fonction $$\arccos$$.
 
-La qubitisation fournit un cadre très général qui permet d'expliquer les accélérations de nombreux algorithmes quantiques.
+La qubitisation fournit ainsi un cadre très général qui permet d'expliquer les accélérations de nombreux algorithmes quantiques.
