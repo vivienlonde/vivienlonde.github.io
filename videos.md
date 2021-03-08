@@ -3,6 +3,10 @@ title: Vidéos
 layout: page
 ---
 
+* [[La Tech au Carré] L'algorithme quantique d'estimation de phase.](https://www.youtube.com/watch?v=7_8hvR5-wmY)
+
+<p></p>
+
 * [[La Tech au Carré] L'algorithme quantique de Grover (i.e. d'amplification d'amplitude).](https://www.youtube.com/watch?v=3PB3-3RKLH4&feature=emb_logo)
 
 <p></p>
