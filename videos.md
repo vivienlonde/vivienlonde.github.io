@@ -7,7 +7,7 @@ layout: page
 
 <p></p>
 
-* [[La Tech au Carré] L'algorithme quantique de Grover (i.e. d'amplification d'amplitude).](https://www.youtube.com/watch?v=3PB3-3RKLH4&feature=emb_logo)
+* [[La Tech au Carré] L'algorithme quantique de Grover.](https://www.youtube.com/watch?v=3PB3-3RKLH4&feature=emb_logo)
 
 <p></p>
 
