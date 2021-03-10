@@ -28,7 +28,7 @@ En pratique, dans 3 mois on sera dans l'un des deux cas suivants :
 * Si $$ S > K $$, j'exerce mon option et je gagne $$ S - K $$.
 * Si $$ S < K $$, j'ai intérêt à ne pas exercer mon option et je ne gagne donc rien.
 
-Finalement dans tous les cas, je vais donc gagner $$ \max(S-K, 0) $$ dans 3 mois. Comme j'ai déjà payé $$ P $$ juste pour acheter l'option, lorsque je fais le bilan j'ai gagné (ou perdu si ce nombre est négatif) $$ R $$ (pour return) :
+Finalement dans tous les cas, je vais donc gagner $$ \max(S-K, 0) $$ dans 3 mois. Comme j'ai déjà payé $$ P $$ juste pour acheter l'option, lorsque je fais le bilan, j'ai gagné (ou perdu si ce nombre est négatif) $$ R $$ (pour return) :
 
 $$ R = \max(S-K, 0) - P $$
 
@@ -40,7 +40,7 @@ Même si on ne connait pas la valeur de $$ S $$, il est courant d'utiliser un mo
 
 On suppose maintenant qu'on dispose d'une procédure $$ M $$ (pour marché) qui réalise le calcul suivant : on lui donne en entrée r bits aléatoires (fournis par un générateur de nombres pseudo-aléatoires) et cette procédure renvoie une valeur pour $$ S $$ avec une probabilité qui correspond à la façon dont on a modélisé le marché. Cette procédure $$ M $$ est implémentée par un ordinateur classique (i.e. non quantique). En répétant le calcul $$ M $$ un grand nombre de fois, en utilisant la formule ci-dessus pour calculer à chaque fois $$ R $$ à partir de $$ S $$ et en faisant la moyenne des résultats obtenus, on obtient un estimateur de l'espérance de $$ R $$.
 
-On ne se pose pas ici la question de savoir comment implémenter $$ M $$ car cela dépend de la modélisation du marché utilisée. Mais on se demande combien de fois il faut utiliser $$ M $$. Comme la plupart des méthodes Monte Carlo (i.e. utilisant des tirages aléatoires), l'estimateur de l'espérance de $$ R $$ converge vers sa "vraie valeur" (ou du moins vers l'espérance pour la modélisation utilisée) comme $$\frac{1}{\sqrt{n}}$$ ou $$n$$ est le nombre de fois qu'on a fait appel à $$ M $$.
+On ne se pose pas ici la question de savoir comment implémenter $$ M $$ car cela dépend de la modélisation du marché utilisée. Mais on se demande combien de fois il faut utiliser $$ M $$. Comme la plupart des méthodes Monte Carlo (i.e. utilisant des tirages aléatoires), l'estimateur de l'espérance de $$ R $$ converge vers sa "vraie valeur" (ou du moins vers l'espérance pour la modélisation utilisée) comme $$\frac{1}{\sqrt{n}}$$. $$n$$ est le nombre de fois qu'on a fait appel à $$ M $$.
 
 <p align="center">
     <figure>
@@ -65,7 +65,7 @@ Selon le modèle qu'on utilise ici, $$ S $$ prend la valeur $$s_i$$ avec probabi
 
 #### Implémentation quantique de la fonction qui nous intéresse (ici $$ R $$)
 
-$$ F_q $$ calcule $$ R $$ à partir de $$ S $$ selon la formule $$ R = f(S) = max (S-K, 0) - P $$. On peut supposer qu'on accède à cette opération quantique sous la forme suivante :
+$$ F_q $$ calcule $$ R $$ à partir de $$ S $$ selon la formule $$ R = f(S) = \max (S-K, 0) - P $$. On peut supposer qu'on accède à cette opération quantique sous la forme suivante :
 
 $$ F_q (\vert s_i \rangle \vert 0 \rangle) = \vert s_i \rangle ( \sqrt{1 - f(s_i)} \vert 0 \rangle + \sqrt{f(s_i)} \vert 1 \rangle )$$
 
@@ -75,7 +75,7 @@ Pour produire l'amplitude qu'on cherche à estimer, il ne reste plus qu'à appli
 
 $$ F_q (M_q \otimes I) (\vert 0 .. 0 \rangle \otimes \vert 0 \rangle) = \sum_i \sqrt{p_i} \sqrt{1 - f(s_i)} \vert s_i \rangle \vert 0 \rangle + \sqrt{p_i} \sqrt{f(s_i)} \vert s_i \rangle \vert 1 \rangle $$
 
-Voici le circuit quantique associé :
+C'est plus clair sous la forme d'un circuit quantique :
 
 <p align="center">
   <img width="600" src="/assets/images/monte_carlo/amplitude_generation.PNG">
@@ -91,8 +91,8 @@ En appliquant l'algorithme quantique d'estimation d'amplitude, on peut estimer $
 
 L'estimation d'amplitude est un très bel algorithme quantique qui peut être considéré comme le produit de deux autres algorithmes quantiques :
 
-* l'amplification d'amplitude (une généralisation de l'[algorithme quantique de Grover](https://www.youtube.com/watch?v=3PB3-3RKLH4))
-* l'[estimation de phase](https://www.youtube.com/watch?v=7_8hvR5-wmY)
+* l'amplification d'amplitude (une généralisation de l'[algorithme quantique de Grover](https://www.youtube.com/watch?v=3PB3-3RKLH4)).
+* l'[estimation de phase](https://www.youtube.com/watch?v=7_8hvR5-wmY).
 
 Cet [article](https://arxiv.org/pdf/quant-ph/0005055.pdf) décrit en détail l'amplification et l'estimation d'amplitude. Comme l'estimation de phase (et pour les mêmes raisons), l'estimation d'amplitude fournit une accélération quadratique par rapport à une estimation classique de paramètre : l'estimateur converge vers la "vraie valeur" comme $$ \frac{1}{n} $$ alors qu'un estimateur classique converge comme $$ \frac{1}{\sqrt{n}} $$. $$ n $$ correspond au nombre de répétitions et est donc proportionnel au temps de calcul.
 
@@ -106,7 +106,7 @@ Il est aussi nécessaire de pouvoir implémenter l'inverse de l'opération qui p
 
 ## Limites de l'approche quantique
 
-* Contrairement au Monte Carlo classique, il n'est pas possible de paralléliser ce calcul quantique. Comme tous les algorithmes quantiques d'amplification ou d'estimation de phase ou d'amplitude, les opérations quantiques doivent être appliquées de façon séquentielle.
+* Contrairement au Monte Carlo classique, il n'est **pas possible de paralléliser ce calcul quantique**. Comme tous les algorithmes quantiques d'amplification ou d'estimation de phase ou d'amplitude, les opérations quantiques doivent être appliquées de façon séquentielle.
 
 * On s'est intéressé ici à la façon dont la précision de l'estimation dépend du nombre d'appels aux opérations quantiques $$ M_q $$ et $$ F_q $$. Cela ne nous dit pas comment construire ces opérations quantiques. Comme cela dépend de la façon dont on modélise un marché et de la variable dont l'espérance nous intéresse, il est difficile de donner des résultats généraux à ce sujet. En pratique pour chaque calcul Monte Carlo, il faut trouver une façon efficace de réaliser ces deux opérations quantiques. Selon la façon dont on implémente ces deux opérations, la précision à partir de laquelle l'algorithme quantique est plus rapide que l'algorithme classique sera plus ou moins grande.
 
