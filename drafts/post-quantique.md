@@ -163,7 +163,7 @@ Pour Rainbow (fondé sur des polynômes multivariés), les clés sont un peu plu
 
 Ce sont les cryptosystèmes asymétriques utilisés aujourd'hui.
 
-RSA-2048 utilise un clé publique de 2048 bits. La clé privée est très petite.
+RSA-2048 utilise un clé publique et une clé privée qui font toutes les deux quelques fois 2048 bits. En effet le module $$ n $$ fait 2048 bits mais on garde également d'autres informations dans les clés privées et publiques. Comme les facteurs $$ p $$ et $$ q $$ pour la clé privée. Ou les exposants privé ($$ d $$) et publique ($$ e $$) utilisés.
 
 Pour les cryptosystèmes fondés sur des problèmes de courbe elliptique le nombre de bits de la clé publique est environ le double du nombre de bits de sécurité voulus. Donc une **clé publique d'environ 300 bits** fournit plus de 128 bits de sécurité.
 
