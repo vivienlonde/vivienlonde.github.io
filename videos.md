@@ -3,6 +3,18 @@ title: Vidéos
 layout: page
 ---
 
+* [[La Tech au Carré] La compilation quantique.](https://www.youtube.com/watch?v=r1B6yhOshmo)
+
+<p></p>
+
+* [[Tartine et Tech] Informatique quantique : introduction et demo.](https://www.youtube.com/watch?v=t2k6aKwwI-Q)
+
+<p></p>
+
+* [[La Tech au Carré] L'algorithme quantique de Shor.](https://www.youtube.com/watch?v=kWtq_P8Yybc&t=144s)
+
+<p></p>
+
 * [[La Tech au Carré] L'algorithme quantique d'estimation de phase.](https://www.youtube.com/watch?v=7_8hvR5-wmY)
 
 <p></p>
