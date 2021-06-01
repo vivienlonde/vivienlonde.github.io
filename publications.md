@@ -4,6 +4,14 @@ layout: page
 ---
 
 * <span style="color: blue;">
+  Toward a Union-Find decoder for quantum LDPC codes.
+  </span>  
+  N. Delfosse, V. Londe, M. Beverland (2021).
+  [[arXiv]](https://arxiv.org/abs/2103.08049)
+
+<p></p>
+
+* <span style="color: blue;">
   Single-Shot Decoding of Linear Rate LDPC Quantum Codes with High Performance.
   </span>  
   N. Breuckmann, V. Londe (2020).
