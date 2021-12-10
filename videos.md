@@ -11,7 +11,7 @@ layout: page
 
 <p></p>
 
-* [[Tartine et Tech] Informatique quantique : introduction et demo.](https://www.youtube.com/watch?v=t2k6aKwwI-Q)
+* [[Tartine et Tech] Informatique quantique : introduction et démo.](https://www.youtube.com/watch?v=t2k6aKwwI-Q)
 
 <p></p>
 
