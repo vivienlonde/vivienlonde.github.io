@@ -3,6 +3,8 @@ title: Vidéos
 layout: page
 ---
 
+* test
+
 * [[Show me Q#]](https://www.youtube.com/playlist?list=PLbl2SbVIi-WobIs_rfcMYidQrrZLg58_R)
 
 <p></p>
