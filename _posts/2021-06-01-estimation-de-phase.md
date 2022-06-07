@@ -32,7 +32,7 @@ L'avantage de l'estimation quantique par rapport aux versions itératives dont n
 
 Par exemple, les premières versions de l'algorithme [HHL](https://en.wikipedia.org/wiki/Quantum_algorithm_for_linear_systems_of_equations#:~:text=The%20quantum%20algorithm%20for%20linear%20systems%20of%20equations%2C,algorithms%20expected%20to%20provide%20a%20speedup%20over%20), qui permet de résoudre un système linéaire, consistait à calculer par estimation quantique de phase les valeurs propres de la matrice à inverser. Il était important de garder ces valeurs en mémoire quantique pour ensuite pouvoir toutes les inverser en superposition. Pour clore cette disgression sur HHL, notez qu'on connait aujourd'hui des méthodes plus directes comme la [qubitisation](https://vivienlonde.github.io/blog/qubitisation) et le [traitement quantique du signal](https://arxiv.org/pdf/1610.06546.pdf).
 
-[L'implémentation Q# de l'estimation quantique de phase](https://github.com/microsoft/QuantumLibraries/blob/main/Standard/src/Characterization/PhaseEstimation/Quantum.qs) fait partie de la bibliothèque standard. La concision de cette implémentation peut surprendre, étant donné le rôle central de l'estimation de phase en algorithmique quantique.
+[L'implémentation Q# de l'estimation quantique de phase](https://github.com/microsoft/QuantumLibraries/blob/main/Standard/src/Characterization/PhaseEstimation/Quantum.qs) fait partie de la bibliothèque standard Q#. La concision de cette implémentation peut surprendre, étant donné le rôle central de l'estimation de phase en algorithmique quantique.
 
 ## L'estimation itérative de phase
 
@@ -40,7 +40,7 @@ Par exemple, les premières versions de l'algorithme [HHL](https://en.wikipedia.
   <img width="400" src="/assets/images/estimation_de_phase/iterative.PNG">
 </p>
 
-L'estimation itérative de phase décompose le gros circuit de l'estimation quantique de phase en plusieurs circuits de plus petite taille et délègue la partie du calcul assurée pas le transformée de Fourier quantique inverse à un processeur classique. Chaque itération consiste à exécuter le circuit suivant :
+L'estimation itérative de phase décompose le gros circuit de l'estimation quantique de phase en plusieurs circuits de plus petite taille et délègue la partie du calcul assurée par la transformée de Fourier quantique inverse à un processeur classique. Chaque itération consiste à exécuter le circuit suivant :
 
 <p align="center">
   <img width="600" src="/assets/images/estimation_de_phase/estimation_iterative_de_phase.PNG">
@@ -54,7 +54,7 @@ $$ \Pr(1) = \sin^2 (n \frac {\phi - \theta} {2}). $$
 
 Chaque exécution de ce circuit apporte donc un peu d'information sur $$ \phi $$, la phase qu'on cherche à calculer.
 
-Ce circuit est plus court que celui de l'estimation quantique de phase : il n'utilise qu'un qubit auxiliaire, une seule itérée de $$ U $$ (i.e. $$ U^n $$) et pas de transformée de Fourier. En revanche on va devoir l'exécuter plusieurs fois, avec différentes valeurs de $$ \theta $$ et $$ n $$.
+Ce circuit est plus court que celui de l'estimation quantique de phase : il n'utilise qu'un qubit auxiliaire, qu'une seule itérée de $$ U $$ (i.e. $$ U^n $$) et pas de transformée de Fourier. En revanche on va devoir l'exécuter plusieurs fois, avec différentes valeurs de $$ \theta $$ et $$ n $$.
 
 Selon la façon dont sont choisis les paramètres $$ \theta $$ et $$ n $$, on donne différents noms à l'estimation itérative de phase. Intéressons-nous maintenant en détail à trois de ces variantes :
 
@@ -106,7 +106,7 @@ De façon cruciale, l'estimation robuste de phase utilise pour apprendre chaque 
 
 On peut nuancer l'avantage en temps d'exécution de l'estimation robuste par rapport à l'estimation Bayésienne en remarquant que lorsqu'on ne dispose pas de meilleur moyen d'appliquer $$ U^n $$ que d'appliquer $$ n $$ fois l'opération $$ U $$, le nombre $$ Q $$ d'appel à $$ U $$ est exponentiel en $$ m $$ dans les deux cas. Toutefois il existe des cas - comme la factorisation - où on connait des raccourcis pour appliquer $$ U^n $$ bien plus rapidement qu'en appliquant $$ n $$ fois $$ U $$. Dans ces cas, l'avantage en temps d'exécution de l'estimation robuste est encore plus significatif.
 
-Les détails de l'estimation robuste de phase sont donnés dans la partie V de [cet article](https://arxiv.org/pdf/1502.02677.pdf) de Kimmel, Low et Yoder. On y trouve également la justification du terme robuste : l'estimation est robuste face à des erreurs de préparation, de mesure, et d'opération quantique. [L'implémentation Q# de l'estimation robuste de phase](https://github.com/microsoft/QuantumLibraries/blob/main/Standard/src/Characterization/PhaseEstimation/Robust.qs) fait partie de la bibliothèque standard.
+Les détails de l'estimation robuste de phase sont donnés dans la partie V de [cet article](https://arxiv.org/pdf/1502.02677.pdf) de Kimmel, Low et Yoder. On y trouve également la justification du terme robuste : l'estimation est robuste face à des erreurs de préparation, de mesure, et d'opération quantique. [L'implémentation Q# de l'estimation robuste de phase](https://github.com/microsoft/QuantumLibraries/blob/main/Standard/src/Characterization/PhaseEstimation/Robust.qs) fait partie de la bibliothèque standard Q#.
 
 ### L'estimation de phase par marche aléatoire
 
