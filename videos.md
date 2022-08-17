@@ -3,6 +3,10 @@ title: Vidéos
 layout: page
 ---
 
+* [Passage chez Micode](https://www.youtube.com/watch?v=YWPqf2GEjMs&t=36s)
+
+<p></p>
+
 * [[Show me Q#]](https://www.youtube.com/playlist?list=PLbl2SbVIi-WobIs_rfcMYidQrrZLg58_R)
 
 <p></p>
