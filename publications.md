@@ -9,6 +9,8 @@ layout: page
   N. Connoly, V. Londe, A. Leverrier, N. Delfosse (2022).
   [[arXiv]](https://arxiv.org/abs/2208.01002)
 
+<p></p>
+
 * <span style="color: blue;">
   Toward a Union-Find decoder for quantum LDPC codes.
   </span>  
