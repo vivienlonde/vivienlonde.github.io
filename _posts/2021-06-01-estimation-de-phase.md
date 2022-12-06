@@ -60,7 +60,7 @@ Selon la façon dont sont choisis les paramètres $$ \theta $$ et $$ n $$, on do
 
 * L'estimation Bayésienne de phase.
 * L'estimation robuste de phase.
-* L'estimation de phase par marche aléatoire. 
+* L'estimation de phase par marche aléatoire.
 
 ### L'estimation Bayésienne de phase
 
