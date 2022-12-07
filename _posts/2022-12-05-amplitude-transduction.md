@@ -8,7 +8,7 @@ tags:
 - state preparation
 ---
 
-This post is part of the Q# Holiday Calendar 2022. Check out the calendar for more great posts
+This post is part of the [Q# Holiday Calendar 2022](https://devblogs.microsoft.com/qsharp/q-holiday-calendar-2022/). Check out the calendar for more great posts !
 
 ## Digital encoding and amplitude encoding
 
