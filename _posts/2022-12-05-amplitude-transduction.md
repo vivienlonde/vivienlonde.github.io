@@ -8,6 +8,7 @@ tags:
 - state preparation
 ---
 
+This post is part of the Q# Holiday Calendar 2022. Check out the calendar for more great posts
 
 ## Digital encoding and amplitude encoding
 
