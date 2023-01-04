@@ -54,4 +54,4 @@ Probability or amplitude encodings are also used for instance in quantum algorit
 
  It leverages functions and operations of the [Amplitude Amplification namespace](https://learn.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.amplitudeamplification) of the [Q# standard library](https://learn.microsoft.com/en-us/azure/quantum/user-guide/libraries/?tabs=tabid-python) for fixed point amplitude amplification.
 
- It also uses the [Quantum Numerics library](https://learn.microsoft.com/en-us/azure/quantum/user-guide/libraries/numerics/numerics) to work with quantum digital encodings of real values: the quantum analog of floats.
+ It also uses the [Quantum Numerics library](https://learn.microsoft.com/en-us/azure/quantum/user-guide/libraries/numerics/numerics) to work with quantum digital encodings of real values: the quantum version of floats.
