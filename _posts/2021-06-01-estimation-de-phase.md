@@ -98,7 +98,7 @@ Cette approche est optimale en termes de nombre d'application de l'opération qu
   <img width="500" src="/assets/images/estimation_de_phase/robuste.jpg">
 </p>
 
-L'estimation robuste de phase apprend les bits de $$ \phi $$ un par un, en réalisant plus de mesures pour apprendre les bits de poids plus forts. C'est-dire que si la meilleure approximation de $$ \frac{\phi}{2\pi} $$ s'écrit $$ \frac{\phi_1}{2} + \frac{\phi_2}{4} + ... + \frac{\phi_m}{2^m} $$, c'est pour apprendre le bit $$ \phi_1 $$ qu'on réalise le plus de mesure, puis pour le bit $$ \phi_2 $$ et ainsi de suite jusqu'au bit $$ \phi_m $$.
+L'estimation robuste de phase apprend les bits de $$ \phi $$ un par un, en réalisant plus de mesures pour apprendre les bits de poids plus forts. C'est-à-dire que si la meilleure approximation de $$ \frac{\phi}{2\pi} $$ s'écrit $$ \frac{\phi_1}{2} + \frac{\phi_2}{4} + ... + \frac{\phi_m}{2^m} $$, c'est pour apprendre le bit $$ \phi_1 $$ qu'on réalise le plus de mesure, puis pour le bit $$ \phi_2 $$ et ainsi de suite jusqu'au bit $$ \phi_m $$.
 
 Comme l'apprentissage de chaque bit $$ \phi_i $$ dépend de résultats de mesure, ce sont des variables aléatoires. On peut s'intéresser à la distribution de probabilité que cela définit sur la valeur $$ \phi $$ estimée. D'après la [documentation Q#](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.characterization.robustphaseestimation), l'écart-type de cette variable aléatoire $$ \phi $$ décroit comme $$ \frac{c}{Q} $$, où $$ Q $$ est le nombre d'applications de la porte $$ U $$ et $$ c $$ est une constante dont la valeur est donnée.
 
