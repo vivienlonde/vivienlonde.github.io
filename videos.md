@@ -3,6 +3,10 @@ title: Vidéos
 layout: page
 ---
 
+* [Intervention à Teratec EDF](https://teratec.eu/Seminaires/TQCI/2022/Videos-TQCI-2022-12.html)
+
+<p></p>
+
 * [Passage chez Micode](https://www.youtube.com/watch?v=YWPqf2GEjMs&t=36s)
 
 <p></p>
