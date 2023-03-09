@@ -7,7 +7,7 @@ layout: page
 
 <p></p>
 
-* [Passage chez Micode](https://www.youtube.com/watch?v=YWPqf2GEjMs&t=36s)
+* [Passage chez Micode](https://www.youtube.com/watch?v=YWPqf2GEjMs)
 
 <p></p>
 
@@ -23,7 +23,7 @@ layout: page
 
 <p></p>
 
-* [[La Tech au Carré] L'algorithme quantique de Shor.](https://www.youtube.com/watch?v=kWtq_P8Yybc&t=144s)
+* [[La Tech au Carré] L'algorithme quantique de Shor.](https://www.youtube.com/watch?v=kWtq_P8Yybc)
 
 <p></p>
 
@@ -44,7 +44,7 @@ layout: page
 
 <p></p>
 
-* [[La Tech au Carré] Qu'est ce qu'un ordinateur quantique?](https://www.youtube.com/watch?v=kletYD2UFTs&t=1s)
+* [[La Tech au Carré] Qu'est ce qu'un ordinateur quantique?](https://www.youtube.com/watch?v=kletYD2UFTs)
 
 <p></p>
 
