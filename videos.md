@@ -56,4 +56,4 @@ layout: page
 
 <p></p>
 
-* [[QIP 2019] Towards local testability for quantum coding.](https://www.youtube.com/watch?v=VDX76AlORUM&list=PLGdMsPGuoD25wLgnY7RBoTAxsnQEMsNA0&index=56&t=1247s)
+* [[QIP 2019] Towards local testability for quantum coding.](https://www.youtube.com/watch?v=VDX76AlORUM&list=PLGdMsPGuoD25wLgnY7RBoTAxsnQEMsNA0&index=56)
