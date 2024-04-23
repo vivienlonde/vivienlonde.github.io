@@ -11,10 +11,6 @@ layout: page
 
 <p></p>
 
-* [[Show me Q#]](https://www.youtube.com/playlist?list=PLbl2SbVIi-WobIs_rfcMYidQrrZLg58_R)
-
-<p></p>
-
 * [[La Tech au Carré] La compilation quantique.](https://www.youtube.com/watch?v=r1B6yhOshmo)
 
 <p></p>
