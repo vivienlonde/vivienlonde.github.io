@@ -3,11 +3,15 @@ title: Vidéos
 layout: page
 ---
 
+* [[Micode] Recherche de nouveaux matériaux](https://youtu.be/zN226SmqN1g?si=_eccTkGVhmw81-23)
+
+<p></p>
+
 * [Intervention à Teratec EDF](https://teratec.eu/Seminaires/TQCI/2022/Videos-TQCI-2022-12.html)
 
 <p></p>
 
-* [Passage chez Micode](https://www.youtube.com/watch?v=YWPqf2GEjMs)
+* [[Micode] Informatique quantique](https://www.youtube.com/watch?v=YWPqf2GEjMs)
 
 <p></p>
 
