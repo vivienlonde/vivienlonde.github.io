@@ -68,7 +68,7 @@ Selon la façon dont sont choisis les paramètres $$ \theta $$ et $$ n $$, on do
   <img width="500" src="/assets/images/estimation_de_phase/bayes.jpg">
 </p>
 
-On fixe tout d'abord le nombre de bits avec lesquel on cherche à décrire la phase $$ \phi $$ recherchée. Pour $$ m $$ bits de précision sur $$ \phi $$, il y a donc $$ 2^m $$ valeurs envisagées pour $$ \phi $$.
+On fixe tout d'abord le nombre de bits avec lesquels on cherche à décrire la phase $$ \phi $$ recherchée. Pour $$ m $$ bits de précision sur $$ \phi $$, il y a donc $$ 2^m $$ valeurs envisagées pour $$ \phi $$.
 
 On choisit une distribution a priori pour $$ \phi $$. On peut par exemple prendre la distribution uniforme. On affecte dans ce cas la probabilité $$ \frac{1}{2^m} $$ à chacune des $$ 2^m $$ valeurs envisagées pour $$ \phi $$ :
 
